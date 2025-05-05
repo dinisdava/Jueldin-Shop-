@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  server:
+    build: ./server
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    env_file:
+      - .env
+
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+
+volumes:
+  mongodb_data:
