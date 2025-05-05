@@ -2,7 +2,7 @@
   "name": "jueldin-backend",
   "version": "1.0.0",
   "main": "server.js",
-  "scripts": {
+"scripts": {
   "dev": "next dev",
   "build": "next build && next export",
   "start": "next start"
