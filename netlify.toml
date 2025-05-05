@@ -1,3 +1,4 @@
 [build]
+  base = "client"
   command = "npm run build"
-  publish = "out"  # Ou ".next" se estiver usando `next export`
+  publish = "out"
