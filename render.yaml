@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: jueldin-api
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRE
+        value: 30d
+      - key: API_URL
+        value: https://jueldin-api.onrender.com
+
+  - type: web
+    name: jueldin-client
+    env: node
+    buildCommand: cd client && npm install && npm run build
+    startCommand: cd client && npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://jueldin-api.onrender.com
