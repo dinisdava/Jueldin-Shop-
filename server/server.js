@@ -17,6 +17,13 @@ app.use(express.json());
 // Rotas
 app.use('/api/products', require('./routes/productRoutes'));
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/cart', require('./routes/cartRoutes'));
+app.use('/api/mpesa', require('./routes/mpesaRoutes'));
+
+// Rota de verificação
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', message: 'API funcionando corretamente' });
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
