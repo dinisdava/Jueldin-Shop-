@@ -2,3 +2,6 @@
   base = "client"
   command = "npm run build"
   publish = "out"
+
+[build.environment]
+  NEXT_PUBLIC_API_URL = "https://api.jueldin.com"
