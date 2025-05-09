@@ -1,6 +1,4 @@
-// Adicionar no topo do arquivo:
 import axios from 'axios';
-
 import { useState } from 'react';
 
 export default function MpesaButton({ amount }) {
@@ -19,7 +17,7 @@ export default function MpesaButton({ amount }) {
     <div className="mt-4">
       <input
         type="tel"
-        placeholder="84XXXXXXX"
+        placeholder="879903962"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         className="p-2 border rounded"
@@ -32,4 +30,4 @@ export default function MpesaButton({ amount }) {
       </button>
     </div>
   );
-          }
+}
