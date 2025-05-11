@@ -17,7 +17,7 @@
 
 ### Instalação
 ```bash
-git clone https://github.com/seu-usuario/jueldin-shop.git
+git clone https://github.com/Dinisdava/jueldin-shop.git
 cd jueldin-shop
 
 # Backend
