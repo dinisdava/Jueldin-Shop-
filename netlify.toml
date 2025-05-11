@@ -1,10 +1,11 @@
 [build]
-  base = "client"
+  base = "client"  # Indica que os comandos rodarão dentro de /client
   command = "npm run build"
-  publish = ".next"
+  publish = "client/.next"  # Caminho completo para o output
 
 [build.environment]
   NEXT_PUBLIC_API_URL = "https://jueldin-api.onrender.com"
-  
+  NODE_VERSION = "18.x"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
