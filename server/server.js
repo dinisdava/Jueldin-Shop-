@@ -11,8 +11,12 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error('Erro no MongoDB:', err));
 
 // Middlewares
-app.use(cors());
-app.use(express.json());
+// Em server/server.js
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://jueldin.netlify.app' 
+    : 'http://localhost:3000'
+}));
 
 // Rotas
 app.use('/api/products', require('./routes/productRoutes'));
