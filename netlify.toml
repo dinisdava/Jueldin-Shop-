@@ -1,7 +1,10 @@
 [build]
   base = "client"
   command = "npm run build"
-  publish = "out"
+  publish = ".next/server/pages"
 
 [build.environment]
-  NEXT_PUBLIC_API_URL = "https://api.jueldin.com"
+  NEXT_PUBLIC_API_URL = "https://jueldin-api.onrender.com"
+  
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
